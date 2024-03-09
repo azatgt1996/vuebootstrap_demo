@@ -1,0 +1,29 @@
+/* way1: red asterisk for required field */
+/* .control-label.required:after {
+  content: " *";
+  color: orangered;
+} */
+
+/* way2: "optional" text for not required field */
+.control-label:not(.required):after {
+  content: " (optional)";
+  font-size: smaller;
+  color: gray;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 3px var(--bs-primary);
+}
+
+/* red border for focused and invalid fields */
+.form-control:focus:invalid,
+.form-select:focus:invalid {
+  border-color: var(--bs-danger);
+  box-shadow: 0 0 3px var(--bs-danger);
+}

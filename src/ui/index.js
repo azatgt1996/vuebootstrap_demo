@@ -1,0 +1,6 @@
+export { default as UiInput } from './UiInput.vue'
+export { default as UiCheckbox } from './UiCheckbox.vue'
+export { default as UiContact } from './UiContact.vue'
+export { default as UiTextarea } from './UiTextarea.vue'
+export { default as UiSelect } from './UiSelect.vue'
+export { default as UiAutocomplete } from './UiAutocomplete.vue'
