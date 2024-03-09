@@ -1,7 +1,7 @@
 <template>
   <UiInput v-model="model" :label :required type="search"
-    :list="id" v-bind="$attrs" :placeholder="placeholder[type]"
-    :pattern="regex[type]" :type :maxlength="maxlength[type]" />
+    v-bind="$attrs" :placeholder="placeholder[type]" :type
+    :pattern="regex[type]" :maxlength="maxlength[type]" />
 </template>
 
 <script setup>
@@ -27,8 +27,6 @@ const maxlength = {
   email: 20,
   tel: 11,
 }
-
-defineOptions({ inheritAttrs: false })
 
 const model = defineModel()
 </script>

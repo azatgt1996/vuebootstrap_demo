@@ -1,4 +1,6 @@
+export { default as UiDatepicker } from './UiDatepicker.vue'
 export { default as UiInput } from './UiInput.vue'
+export { default as UiNumber } from './UiNumber.vue'
 export { default as UiCheckbox } from './UiCheckbox.vue'
 export { default as UiContact } from './UiContact.vue'
 export { default as UiTextarea } from './UiTextarea.vue'

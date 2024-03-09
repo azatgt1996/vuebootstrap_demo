@@ -1,7 +1,7 @@
 <template>
   <label class="mb-3 w-100">
     <span class="control-label" :class="{ required }">{{ label }}</span>
-    <input v-model="model" class="form-control" :required v-bind="$attrs">
+    <input v-model.trim="model" class="form-control" :required v-bind="$attrs">
   </label>
 </template>
 

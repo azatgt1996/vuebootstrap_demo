@@ -1,9 +1,11 @@
 <template>
-  <UiInput v-model="model" :label :required type="search"
-           :list="id" v-bind="$attrs" />
-  <datalist :id>
-    <option v-for="(item, key) in options" :value="item" :key />
-  </datalist>
+  <div>
+    <UiInput v-model="model" :label :required type="search"
+             :list="id" v-bind="$attrs" />
+    <datalist :id>
+      <option v-for="(item, key) in options" :value="item" :key />
+    </datalist>
+  </div>
 </template>
 
 <script setup>

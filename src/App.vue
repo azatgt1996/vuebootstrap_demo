@@ -1,11 +1,13 @@
 <script setup>
 import { reactive, ref } from 'vue';
-import { UiInput, UiTextarea, UiSelect, UiAutocomplete, UiContact, UiCheckbox } from './ui'
+import { UiInput, UiTextarea, UiSelect, UiAutocomplete, UiContact, UiCheckbox, UiDatepicker, UiNumber } from './ui'
 
 const form = reactive({
   name: '',
   email: '',
   phone: '',
+  weight: '',
+  birthDate: '',
   address: '',
   bio: '',
   lang: '',
@@ -36,12 +38,16 @@ function onSubmit() {
   <form class="w-25 m-auto mt-5" @submit.prevent="onSubmit">
     <fieldset>
       <div class="d-flex gap-2">
-        <UiInput label="Name" v-model="form.name" minlength="3" maxlength="10" required/>
+        <UiInput label="Name" v-model="form.name" v-limit="[3, 10]" required/>
         <UiContact label="Email" v-model="form.email" type="email" required/>
       </div>
+      <div class="d-flex gap-2">
+        <UiDatepicker label="Birth date" v-model="form.birthDate" v-limit="['1990-01-01', '2025-01-01']" required/>
+        <UiNumber label="Weight (kg)" v-model="form.weight" v-limit="[30, 150]" step=".5"/>
+      </div>
       <UiContact label="Phone" v-model="form.phone" type="tel"/>
-      <UiAutocomplete label="Address" v-model="form.address" :options="addresses" required/>
-      <UiTextarea label="Bio" v-model="form.bio" minlength="10"/>
+      <UiAutocomplete label="Address" v-model="form.address" v-limit="[10, 40]" :options="addresses" required/>
+      <UiTextarea label="Bio" v-model="form.bio" v-limit="[10, 50]"/>
       <UiSelect label="Language" v-model="form.lang" :options="langs" placeholder="Select language" required/>
       <UiSelect label="Skills" v-model="form.skills" :options="skills" placeholder="Select skills" multiple required/>
       <UiCheckbox v-model="form.notification" label="I want to receive the notifications"/>
@@ -52,5 +58,4 @@ function onSubmit() {
     <button class="btn btn-secondary" type="reset">Reset</button>
     <!-- <pre>{{ form }}</pre> -->
   </form>
-
 </template>
