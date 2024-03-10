@@ -8,11 +8,12 @@
 
     "noImplicitAny": false,
     "allowJs": true,
+    "checkJs": true,
 
-    // "baseUrl": "src",
-    // "paths": {
-    //   "@/*": ["./*"]
-    // },
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
