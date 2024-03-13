@@ -24,5 +24,14 @@
       </div>
     </div>
   </nav>
-  <router-view></router-view>
+  <router-view>
+    <template #default="{ Component }">
+      <KeepAlive v-if="Component" :max="3">
+        <component :is="Component" />
+      </KeepAlive>
+    </template>
+    <template #fallback>
+      <UiAlert>Loading...</UiAlert>
+    </template>
+  </router-view>
 </template>

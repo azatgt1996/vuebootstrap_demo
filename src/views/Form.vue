@@ -22,12 +22,7 @@ const langs = [
   {name: 'English', value: 'en'},
 ]
 
-const skills = [
-  {name: 'Java', value: 'java'},
-  {name: 'JS', value: 'js'},
-  {name: 'C#', value: 'c#'},
-  {name: 'Kotlin', value: 'kotlin'},
-]
+const skills = ['Java', 'JS', 'C#', 'Kotlin']
 
 const today = dayjs().format('YYYY-MM-DD')
 
@@ -39,7 +34,7 @@ function onSubmit() {
 </script>
 
 <template>
-  <form class="w-25 m-auto mt-5" @submit.prevent="onSubmit">
+  <form class="col-11 col-md-4 mx-auto" @submit.prevent="onSubmit">
     <fieldset>
       <div class="d-flex gap-2">
         <UiInput label="Name" v-model="form.name" v-limit="[3, 10]" required/>
