@@ -31,10 +31,16 @@ const addresses = ['Kazan', 'Moscow', 'St. Petersburg', 'New York']
 function onSubmit() {
   alert(JSON.stringify(form, null, 2))
 }
+
+const emptyForm = { ...form }
+
+function onReset() {
+  Object.assign(form, emptyForm)
+}
 </script>
 
 <template>
-  <form class="col-11 col-md-4 mx-auto" @submit.prevent="onSubmit">
+  <form class="col-11 col-md-4 mx-auto" @submit.prevent="onSubmit" @reset.prevent="onReset">
     <fieldset>
       <div class="d-flex gap-2">
         <UiInput label="Name" v-model="form.name" v-limit="[3, 10]" required/>
